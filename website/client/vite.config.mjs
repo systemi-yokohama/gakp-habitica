@@ -128,7 +128,12 @@ export default defineConfig({
   },
   base: '/',
   server: {
+    host: '0.0.0.0',
     headers: { 'Cache-Control': 'no-store' },
+    allowedHosts: [
+      'gakp-habitica-1056861500.ap-southeast-2.elb.amazonaws.com',
+      'habitica.gakp.systemi.org',
+    ],
     proxy: {
       // proxy all requests to the server at IP:PORT as specified in the top-level config
       '^/api/v3': {
